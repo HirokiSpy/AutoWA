@@ -1,83 +1,100 @@
 # AutoWA
 
-AutoWA ialah aplikasi desktop ringkas berasaskan Python untuk menjadualkan penghantaran **satu mesej WhatsApp** kepada nombor telefon atau kumpulan pada waktu tertentu. Antara muka menggunakan Bahasa Melayu dan dibina dengan Tkinter.
+AutoWA is a simple Python desktop application for scheduling the delivery of a **single WhatsApp message** to a phone number or WhatsApp group at a selected time. The interface is currently presented in Malay and is built with Tkinter.
 
-> Gunakan aplikasi ini hanya untuk komunikasi yang sah dan kepada penerima yang bersetuju menerima mesej daripada anda. Elakkan spam, mesej pukal, atau penggunaan yang melanggar syarat WhatsApp.
+> Use this application only for lawful communication and with recipients who have agreed to receive messages from you. Avoid spam, bulk unsolicited messages, or any use that violates WhatsApp's terms.
 
-## Ciri-ciri
+## Features
 
-- Menjadualkan mesej kepada nombor telefon antarabangsa atau kumpulan WhatsApp.
-- Memasukkan waktu dalam format 12 jam (AM/PM), sama ada menaip atau memilih daripada senarai.
-- Melihat kira detik dan membatalkan jadual sebelum penghantaran bermula.
-- Menggunakan WhatsApp Web melalui Google Chrome dengan bantuan `pywhatkit`.
+- Schedule a message for an international phone number or a WhatsApp group.
+- Enter a time in 12-hour AM/PM format by typing or using dropdown lists.
+- View a live countdown and cancel the schedule before delivery begins.
+- Send through WhatsApp Web in Google Chrome with the `pywhatkit` package.
 
-## Keperluan
+## Requirements
 
-- Python **3.10 atau lebih baharu**.
-- Google Chrome dipasang pada komputer.
-- Akaun WhatsApp yang boleh digunakan dengan WhatsApp Web.
-- Pakej Python dalam `requirements.txt`.
-- Tkinter, yang biasanya disertakan bersama Python. Pada sesetengah distro Linux, pasang pakej sistem `python3-tk` jika Tkinter tiada.
+- Python **3.10 or newer**
+- Google Chrome installed
+- A WhatsApp account that can access WhatsApp Web
+- Python packages listed in `requirements.txt`
+- Tkinter, which is usually included with Python. On some Linux distributions, install the system package `python3-tk` if Tkinter is missing.
 
-## Pemasangan dan penggunaan
+## Installation
 
-1. Klon repositori dan masuk ke direktori projek:
+1. Clone the repository and enter the project directory:
 
    ```bash
    git clone https://github.com/HirokiSpy/AutoWA.git
    cd AutoWA
    ```
 
-2. (Disyorkan) Cipta dan aktifkan persekitaran maya:
+2. Recommended: create and activate a virtual environment.
 
    **Windows (PowerShell):**
+
    ```powershell
    python -m venv .venv
    .venv\Scripts\Activate.ps1
    ```
 
    **macOS / Linux:**
+
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate
    ```
 
-3. Pasang kebergantungan:
+3. Install the dependencies:
 
    ```bash
    python -m pip install -r requirements.txt
    ```
 
-4. Jalankan aplikasi:
+4. Start the application:
 
    ```bash
    python AutoWA.py
    ```
 
-5. Pilih jenis sasaran, masukkan nombor telefon lengkap dengan kod negara (contohnya `+60123456789`) atau maklumat kumpulan, taip mesej, tetapkan waktu, kemudian tekan **Mula Jadual**.
+## Usage
 
-Pastikan WhatsApp Web boleh dibuka dan akaun anda telah log masuk apabila tiba waktu penghantaran. Jika perlu, log masuk secara manual dalam Chrome terlebih dahulu.
+1. Choose **Number** or **Group** as the target type.
+2. Enter a complete international phone number, including the country code (for example, `+60123456789`) or a valid WhatsApp group ID/invite link.
+3. Enter the message.
+4. Select or type the delivery time in 12-hour AM/PM format.
+5. Click **Mula Jadual** to start the countdown.
 
-## Nota penting
+Keep the application open and the computer running until the scheduled time. WhatsApp Web must be accessible and, when required, you must sign in manually in Chrome.
 
-- Aplikasi dan komputer mesti kekal hidup sehingga waktu yang dijadualkan. Jadual tidak disimpan selepas aplikasi ditutup.
-- Jika waktu yang dipilih sudah berlalu pada hari ini, aplikasi menjadualkannya untuk hari berikutnya.
-- Pembatalan tersedia sebelum proses penghantaran bermula; penghantaran yang sudah dimulakan tidak boleh dibatalkan melalui aplikasi.
-- Selepas penghantaran berjaya, kod aplikasi cuba menutup Chrome. Pada Windows dan Linux, arahan yang digunakan boleh menutup **semua proses Chrome** yang sedang berjalan. Simpan kerja dalam Chrome sebelum menggunakan AutoWA.
-- Penghantaran bergantung pada sambungan internet, keadaan WhatsApp Web, dan tingkah laku `pywhatkit`; penghantaran tidak dijamin.
-- Aplikasi ini tidak mengesahkan kebenaran penerima atau kesahihan nombor/ID kumpulan. Semak maklumat sasaran sebelum menjadualkan.
+## Important Notes
 
-## Penyelesaian masalah
+- The schedule is not saved after the application is closed.
+- If the selected time has already passed on the current day, the application schedules it for the following day.
+- You can cancel the schedule before the delivery process begins.
+- After a successful send, the application attempts to close Chrome. On Windows and Linux, its process command may close **all running Chrome instances**. Save your work before using AutoWA.
+- Delivery depends on internet connectivity, WhatsApp Web availability, and `pywhatkit`; successful delivery is not guaranteed.
+- The application does not verify that the recipient consented or that a phone number/group ID is valid. Review target details before scheduling.
 
-- **Tkinter tidak ditemui:** pasang sokongan Tkinter untuk pemasangan Python anda. Pada Ubuntu/Debian, biasanya `sudo apt install python3-tk`.
-- **Chrome atau WhatsApp Web tidak dapat dibuka:** pastikan Chrome dipasang, sambungan internet tersedia, dan anda telah log masuk ke WhatsApp Web.
-- **Ralat kebergantungan:** aktifkan persekitaran maya yang betul dan jalankan semula `python -m pip install -r requirements.txt`.
+## Troubleshooting
 
-## Kebergantungan
+- **Tkinter is missing:** install Tkinter support for your Python installation. On Ubuntu/Debian, this is usually:
 
-- [`pywhatkit`](https://github.com/Ankit404butfound/PyWhatKit) — automasi WhatsApp Web.
-- Tkinter — antara muka grafik (pustaka standard Python, tertakluk pada pakej sistem).
+  ```bash
+  sudo apt install python3-tk
+  ```
 
-## Lesen
+- **Chrome or WhatsApp Web does not open:** verify that Chrome is installed, the internet is available, and you are signed in to WhatsApp Web.
+- **Dependency error:** activate the correct virtual environment and run:
 
-Repositori ini belum menyatakan lesen. Sehingga lesen ditambah, tiada kebenaran penggunaan semula atau pengedaran yang diberikan secara tersirat.
+  ```bash
+  python -m pip install -r requirements.txt
+  ```
+
+## Dependencies
+
+- [`pywhatkit`](https://github.com/Ankit404butfound/PyWhatKit) — WhatsApp Web automation
+- Tkinter — graphical user interface (Python standard library, subject to system package availability)
+
+## License
+
+This repository does not currently include a license. Until a license is added, no permission for reuse or redistribution is granted by implication.
