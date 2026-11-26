@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autowa"
+version = "1.0.0"
+description = "A desktop app for scheduling WhatsApp messages"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pywhatkit>=5.4,<6.0",
+]
+
+[project.scripts]
+AutoWA = "autowa_launcher:main"
+
+[tool.setuptools]
+py-modules = ["AutoWA", "autowa_launcher"]

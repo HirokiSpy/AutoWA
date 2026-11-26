@@ -10,55 +10,45 @@ AutoWA is a simple Python desktop application for scheduling the delivery of a *
 - Enter a time in 12-hour AM/PM format by typing or using dropdown lists.
 - View a live countdown and cancel the schedule before delivery begins.
 - Send through WhatsApp Web in Google Chrome with the `pywhatkit` package.
+- Launch it from any working directory using the `AutoWA` command after installation.
 
 ## Requirements
 
 - Python **3.10 or newer**
 - Google Chrome installed
 - A WhatsApp account that can access WhatsApp Web
-- Python packages listed in `requirements.txt`
 - Tkinter, which is usually included with Python. On some Linux distributions, install the system package `python3-tk` if Tkinter is missing.
 
-## Installation
+## Install once
 
-1. Clone the repository and enter the project directory:
+Clone the repository and install AutoWA as a command-line application. You only need to do this once per Python environment:
 
-   ```bash
-   git clone https://github.com/HirokiSpy/AutoWA.git
-   cd AutoWA
-   ```
+```bash
+git clone https://github.com/HirokiSpy/AutoWA.git
+cd AutoWA
+python -m pip install .
+```
 
-2. Recommended: create and activate a virtual environment.
+This installs the Python dependencies and registers the `AutoWA` command. After installation, you can run it from any folder without navigating to the project directory:
 
-   **Windows (PowerShell):**
+```bash
+AutoWA
+```
 
-   ```powershell
-   python -m venv .venv
-   .venv\Scripts\Activate.ps1
-   ```
+On Windows, if the `AutoWA` command is not recognized, add your Python installation's `Scripts` directory to `PATH`, or run the generated `AutoWA.exe` from that directory. Restart the terminal after changing `PATH`.
 
-   **macOS / Linux:**
+## Run from source (alternative)
 
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
+You can also run the app directly from the project directory:
 
-3. Install the dependencies:
-
-   ```bash
-   python -m pip install -r requirements.txt
-   ```
-
-4. Start the application:
-
-   ```bash
-   python AutoWA.py
-   ```
+```bash
+python -m pip install -r requirements.txt
+python AutoWA.py
+```
 
 ## Usage
 
-1. Choose **Number** or **Group** as the target type.
+1. Choose **Nombor** or **Group** as the target type.
 2. Enter a complete international phone number, including the country code (for example, `+60123456789`) or a valid WhatsApp group ID/invite link.
 3. Enter the message.
 4. Select or type the delivery time in 12-hour AM/PM format.
@@ -83,12 +73,9 @@ Keep the application open and the computer running until the scheduled time. Wha
   sudo apt install python3-tk
   ```
 
+- **`AutoWA` command is not recognized:** confirm the package was installed in the active Python environment and that its Scripts/bin directory is on `PATH`. Restart the terminal after updating `PATH`.
 - **Chrome or WhatsApp Web does not open:** verify that Chrome is installed, the internet is available, and you are signed in to WhatsApp Web.
-- **Dependency error:** activate the correct virtual environment and run:
-
-  ```bash
-  python -m pip install -r requirements.txt
-  ```
+- **Dependency error:** install the project again with `python -m pip install .`.
 
 ## Dependencies
 
