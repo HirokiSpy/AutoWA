@@ -84,4 +84,4 @@ Keep the application open and the computer running until the scheduled time. Wha
 
 ## License
 
-This repository does not currently include a license. Until a license is added, no permission for reuse or redistribution is granted by implication.
+This project is licensed under the [MIT License](LICENSE). Copyright (c) 2026 Hiroki.
